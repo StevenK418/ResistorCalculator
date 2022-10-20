@@ -9,146 +9,101 @@
     tools:layout_editor_absoluteY="0dp">
 
     <TextView
-        android:id="@+id/resistorValue"
+        android:id="@+id/tvDisplay"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="2.00"
-        android:textSize="34sp"
+        android:text="Resistor Value"
+        android:textAppearance="@style/TextAppearance.AppCompat.Display1"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toStartOf="@+id/guideline2"
-        app:layout_constraintStart_toStartOf="@+id/guideline3"
+        app:layout_constraintHorizontal_bias="0.497"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.109" />
+        app:layout_constraintVertical_bias="0.148" />
 
     <Button
-        android:id="@+id/band4"
-        android:layout_width="33dp"
-        android:layout_height="107dp"
-        android:text="Button"
-        app:layout_constraintBottom_toTopOf="@+id/guideline7"
+        android:id="@+id/buttonBand1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:onClick="doBand1"
+        android:text="Band 1"
+        app:layout_constraintBaseline_toBaselineOf="@+id/buttonBand2"
+        app:layout_constraintEnd_toStartOf="@+id/buttonBand2"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <Button
+        android:id="@+id/buttonBand2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="58dp"
+        android:onClick="doBand2"
+        android:text="Band 2"
+        app:layout_constraintEnd_toStartOf="@+id/buttonBand3"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toEndOf="@+id/buttonBand1"
+        app:layout_constraintTop_toBottomOf="@+id/tvDisplay" />
+
+    <Button
+        android:id="@+id/buttonBand3"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:onClick="doBand3"
+        android:text="Band 3"
+        app:layout_constraintBaseline_toBaselineOf="@+id/buttonBand2"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.5"
-        app:layout_constraintStart_toEndOf="@+id/band3"
-        app:layout_constraintTop_toTopOf="@+id/guideline6" />
+        app:layout_constraintStart_toEndOf="@+id/buttonBand2" />
 
     <Button
-        android:id="@+id/band1"
-        android:layout_width="33dp"
-        android:layout_height="107dp"
-        android:text="Button"
-        app:layout_constraintBottom_toTopOf="@+id/guideline7"
-        app:layout_constraintEnd_toStartOf="@+id/band2"
+        android:id="@+id/buttonRed"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:background="#F44336"
+        android:onClick="doRed"
+        android:text="Red"
+        app:layout_constraintBaseline_toBaselineOf="@+id/buttonOrange"
+        app:layout_constraintEnd_toStartOf="@+id/buttonOrange"
         app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <Button
+        android:id="@+id/buttonOrange"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="65dp"
+        android:background="#FFA500"
+        android:onClick="doOrange"
+        android:text="Orange"
+        app:layout_constraintEnd_toStartOf="@+id/buttonYellow"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toEndOf="@+id/buttonRed"
+        app:layout_constraintTop_toBottomOf="@+id/buttonBand2" />
+
+    <Button
+        android:id="@+id/buttonYellow"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:background="#FFFF00"
+        android:onClick="doYellow"
+        android:text="Yellow"
+        app:layout_constraintBaseline_toBaselineOf="@+id/buttonOrange"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toEndOf="@+id/buttonOrange" />
+
+    <Button
+        android:id="@+id/buttonCalculate"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="67dp"
+        android:onClick="doCalculate"
+        android:text="Calculate"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="@+id/guideline6" />
+        app:layout_constraintTop_toBottomOf="@+id/buttonOrange" />
 
-    <Button
-        android:id="@+id/band3"
-        android:layout_width="33dp"
-        android:layout_height="107dp"
-        android:text="Button"
-        app:layout_constraintBottom_toTopOf="@+id/guideline7"
-        app:layout_constraintEnd_toStartOf="@+id/band4"
-        app:layout_constraintHorizontal_bias="0.5"
-        app:layout_constraintStart_toEndOf="@+id/band2"
-        app:layout_constraintTop_toTopOf="@+id/guideline6" />
 
-    <Button
-        android:id="@+id/band2"
-        android:layout_width="33dp"
-        android:layout_height="107dp"
-        android:text="Button"
-        app:layout_constraintBottom_toTopOf="@+id/guideline7"
-        app:layout_constraintEnd_toStartOf="@+id/band3"
-        app:layout_constraintHorizontal_bias="0.5"
-        app:layout_constraintStart_toEndOf="@+id/band1"
-        app:layout_constraintTop_toTopOf="@+id/guideline6" />
-
-    <androidx.constraintlayout.widget.Guideline
-        android:id="@+id/guideline2"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:orientation="vertical"
-        app:layout_constraintGuide_percent=".96" />
-
-    <androidx.constraintlayout.widget.Guideline
-        android:id="@+id/guideline3"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:orientation="vertical"
-        app:layout_constraintGuide_percent=".04" />
-
-    <androidx.constraintlayout.widget.Guideline
-        android:id="@+id/guideline5"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:orientation="horizontal"
-        app:layout_constraintGuide_begin="20dp"
-        app:layout_constraintGuide_percent=".1" />
-
-    <androidx.constraintlayout.widget.Guideline
-        android:id="@+id/guideline6"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:orientation="horizontal"
-        app:layout_constraintGuide_begin="20dp"
-        app:layout_constraintGuide_percent=".17" />
-
-    <androidx.constraintlayout.widget.Guideline
-        android:id="@+id/guideline7"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:orientation="horizontal"
-        app:layout_constraintGuide_begin="20dp"
-        app:layout_constraintGuide_percent=".4" />
-
-    <androidx.constraintlayout.widget.Guideline
-        android:id="@+id/guideline8"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:orientation="horizontal"
-        app:layout_constraintGuide_begin="20dp"
-        app:layout_constraintGuide_percent="0.8" />
-
-    <Button
-        android:id="@+id/tensSelectorBtn"
-        android:layout_width="64dp"
-        android:layout_height="93dp"
-        android:layout_marginStart="28dp"
-        android:onClick="tensBtnClick"
-        android:text="Button"
-        app:layout_constraintBottom_toTopOf="@+id/guideline8"
-        app:layout_constraintStart_toStartOf="@+id/guideline3"
-        app:layout_constraintTop_toTopOf="@+id/guideline7" />
-
-    <Button
-        android:id="@+id/unitsSelectorBtn"
-        android:layout_width="64dp"
-        android:layout_height="93dp"
-        android:layout_marginStart="20dp"
-        android:text="Button"
-        app:layout_constraintBottom_toTopOf="@+id/guideline8"
-        app:layout_constraintStart_toEndOf="@+id/tensSelectorBtn"
-        app:layout_constraintTop_toTopOf="@+id/guideline7" />
-
-    <Button
-        android:id="@+id/toleranceSelectorBtn"
-        android:layout_width="64dp"
-        android:layout_height="93dp"
-        android:layout_marginStart="16dp"
-        android:text="Button"
-        app:layout_constraintBottom_toTopOf="@+id/guideline8"
-        app:layout_constraintStart_toEndOf="@+id/multiplierSelectorBtn"
-        app:layout_constraintTop_toTopOf="@+id/guideline7" />
-
-    <Button
-        android:id="@+id/multiplierSelectorBtn"
-        android:layout_width="64dp"
-        android:layout_height="93dp"
-        android:layout_marginStart="16dp"
-        android:text="Button"
-        app:layout_constraintBottom_toTopOf="@+id/guideline8"
-        app:layout_constraintStart_toEndOf="@+id/unitsSelectorBtn"
-        app:layout_constraintTop_toTopOf="@+id/guideline7" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
