@@ -22,7 +22,9 @@ public class MainActivity extends AppCompatActivity
 {
     int currentBand = 0;
     int resistorValue = 0;
+
     TextView display;
+    TextView toleranceDisplay;
 
     //Create a new button object to store selected band reference
     Button selectedBand = null;
@@ -32,9 +34,13 @@ public class MainActivity extends AppCompatActivity
     {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+
+        //Initialize references to Text display fields
         display = findViewById(R.id.tvDisplay);
+        toleranceDisplay = findViewById(R.id.toleranceDisplay);
     }
 
+    //Band button onClick event handlers
     public void doBand1 (View view)
     {
         currentBand = 1;
@@ -45,22 +51,18 @@ public class MainActivity extends AppCompatActivity
         currentBand = 2;
         selectedBand = (Button) view;
     }
-
-
-    // Value Button Onclick event handlers
     public void doBand3 (View view)
     {
         currentBand = 3;
         selectedBand = (Button) view;
     }
-
-    // Value Button Onclick event handlers
     public void doBand4 (View view)
     {
         currentBand = 4;
         selectedBand = (Button) view;
     }
 
+    //Value button OnClick event handlers
     public void doBlack (View view)
     {
         if (currentBand == 1)
@@ -188,7 +190,7 @@ public class MainActivity extends AppCompatActivity
         }
         else if (currentBand == 3)
         {
-            resistorValue = resistorValue * 1000;
+            resistorValue = resistorValue * 100000;
         }
 
         //Check if the selected band is initialized and set the colour
@@ -211,7 +213,7 @@ public class MainActivity extends AppCompatActivity
         }
         else if (currentBand == 3)
         {
-            resistorValue = resistorValue * 1000;
+            resistorValue = resistorValue * 1000000;
         }
 
         //Check if the selected band is initialized and set the colour
@@ -234,7 +236,7 @@ public class MainActivity extends AppCompatActivity
         }
         else if (currentBand == 3)
         {
-            resistorValue = resistorValue * 1000;
+            resistorValue = resistorValue * 10000000;
         }
         //Check if the selected band is initialized and set the colour
         if(selectedBand  != null && selectedBand != findViewById(R.id.buttonBand4))
@@ -256,7 +258,7 @@ public class MainActivity extends AppCompatActivity
         }
         else if (currentBand == 3)
         {
-            resistorValue = resistorValue * 1000;
+            resistorValue = resistorValue * 100000000;
         }
         //Check if the selected band is initialized and set the colour
         if(selectedBand != null && selectedBand != findViewById(R.id.buttonBand4))
@@ -278,7 +280,7 @@ public class MainActivity extends AppCompatActivity
         }
         else if (currentBand == 3)
         {
-            resistorValue = resistorValue * 1000;
+            resistorValue = resistorValue * 1000000000;
         }
 
         //Check if the selected band is initialized and set the colour
@@ -286,7 +288,45 @@ public class MainActivity extends AppCompatActivity
         {
             //Set colour of the selected band to the selected colour
             selectedBand.setBackgroundColor(getColor(R.color.White));
-            selectedBand.setTextColor(R.color.black);
+        }
+    }
+
+    public void doGold(View view)
+    {
+        if (currentBand == 4)
+        {
+            //Get percentage tolerance
+            double result = resistorValue * 0.05;
+            resistorValue = resistorValue + (int) result;
+            //TODO: Add a new textview and this value should be shown with a +/- before it
+            toleranceDisplay.setText(String.format("+/- 0.05" + " \n {0}", result));
+        }
+
+        //Check if the selected band is initialized and set the colour
+        if(selectedBand != null && selectedBand == findViewById(R.id.buttonBand4))
+        {
+            //Set colour of the selected band to the selected colour
+            selectedBand.setBackgroundColor(getColor(R.color.Gold));
+        }
+    }
+
+    public void doSilver(View view)
+    {
+        if (currentBand == 4)
+        {
+            //Get percentage tolerance
+            double result = resistorValue * 0.10;
+            resistorValue = resistorValue + (int) result;
+            //TODO: Add a new textview and this value should be shown with a +/- before it
+            toleranceDisplay.setText(String.format("+/- 0.10" + " \n {0}", result));
+        }
+
+
+        //Check if the selected band is initialized and set the colour
+        if(selectedBand != null && selectedBand == findViewById(R.id.buttonBand4))
+        {
+            //Set colour of the selected band to the selected colour
+            selectedBand.setBackgroundColor(getColor(R.color.Silver));
         }
     }
 
