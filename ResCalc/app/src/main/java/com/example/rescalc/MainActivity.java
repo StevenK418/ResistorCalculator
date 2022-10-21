@@ -46,10 +46,57 @@ public class MainActivity extends AppCompatActivity
         selectedBand = (Button) view;
     }
 
+
+    // Value Button Onclick event handlers
     public void doBand3 (View view)
     {
         currentBand = 3;
         selectedBand = (Button) view;
+    }
+
+    public void doBlack (View view)
+    {
+        if (currentBand == 1)
+        {
+            resistorValue = 0;
+        }
+        else if (currentBand == 2)
+        {
+            resistorValue = resistorValue * 10 + 0;
+        }
+        else if (currentBand == 3)
+        {
+            resistorValue = resistorValue * 1;
+        }
+
+        //Check if the selected band is initialized and set the colour
+        if (selectedBand != null)
+        {
+            //Set colour of the selected band to the selected colour
+            selectedBand.setBackgroundColor(getColor(R.color.Black));
+        }
+    }
+
+    public void doBrown (View view)
+    {
+        if (currentBand == 1)
+        {
+            resistorValue = 1;
+        }
+        else if (currentBand == 2)
+        {
+            resistorValue = resistorValue * 10 + 1;
+        }
+        else if (currentBand == 3)
+        {
+            resistorValue = resistorValue * 10;
+        }
+
+        //Check if the selected band is initialized and set the colour
+        if (selectedBand != null) {
+            //Set colour of the selected band to the selected colour
+            selectedBand.setBackgroundColor(getColor(R.color.Brown));
+        }
     }
 
     public void doRed (View view)
@@ -232,6 +279,7 @@ public class MainActivity extends AppCompatActivity
         {
             //Set colour of the selected band to the selected colour
             selectedBand.setBackgroundColor(getColor(R.color.White));
+            selectedBand.setTextColor(R.color.black);
         }
     }
 
