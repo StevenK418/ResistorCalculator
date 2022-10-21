@@ -313,9 +313,10 @@ public class MainActivity extends AppCompatActivity
         {
             //Get percentage tolerance
             double result = resistorValue * 0.05;
-            resistorValue = resistorValue + (int) result;
+            //resistorValue = resistorValue + (int) result;
 
-            toleranceDisplay.setText(String.format("+/- 0.05" + " \n {0}", result));
+            String toleranceResultMessage = String.format(String.format("+/- 0.05" + " \n " + InterpretResult((long)result)));
+            toleranceDisplay.setText(toleranceResultMessage);
         }
 
         //Check if the selected band is initialized and set the colour
@@ -332,12 +333,11 @@ public class MainActivity extends AppCompatActivity
         {
             //Get percentage tolerance
             double result = resistorValue * 0.10;
-            resistorValue = resistorValue + (int) result;
+            //resistorValue = resistorValue + (int) result;
 
-            String toleranceResultMessage = String.format(String.format("+/- 0.10" + " \n " + String.valueOf((int)result)));
+            String toleranceResultMessage = String.format(String.format("+/- 0.10" + " \n " + InterpretResult((long)result)));
             toleranceDisplay.setText(toleranceResultMessage);
         }
-
 
         //Check if the selected band is initialized and set the colour
         if(selectedBand != null && selectedBand == findViewById(R.id.buttonBand4))
@@ -350,7 +350,25 @@ public class MainActivity extends AppCompatActivity
     //Function button event handlers
     public void doCalculate (View view)
     {
-        display.setText(String.valueOf(resistorValue));
+        display.setText(InterpretResult(resistorValue));
+    }
+
+    public String InterpretResult(long value)
+    {
+        String result = "";
+        if(value < 1000)
+        {
+            result = String.valueOf(value) + " \u03A9";
+        }
+        else if(value > 1000)
+        {
+            result = String.valueOf(value/1000) + " K\u03A9";
+        }
+        else if(value > 1000000)
+        {
+            result = String.valueOf(value/1000000) + " M\u03A9";
+        }
+        return result;
     }
 
     public void doReset(View view)
@@ -358,7 +376,6 @@ public class MainActivity extends AppCompatActivity
         //Reset the state of teh app for new calculations
         Reset();
     }
-
 
     //Resets the state of the app prior to new calculations
     public void Reset()
@@ -374,7 +391,7 @@ public class MainActivity extends AppCompatActivity
         for( Button band : bands)
         {
             //Just set bands to Purple for consistency
-            band.setBackgroundColor(getColor(R.color.Purple));
+            band.setBackgroundColor(getColor(R.color.Black));
         }
     }
 
