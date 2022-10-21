@@ -24,6 +24,7 @@ public class MainActivity extends AppCompatActivity
 {
     int currentBand = 0;
     long resistorValue = 0;
+    double toleranceValue = 0;
 
     TextView display;
     TextView toleranceDisplay;
@@ -311,12 +312,9 @@ public class MainActivity extends AppCompatActivity
     {
         if (currentBand == 4)
         {
+            toleranceValue = 0.05;
             //Get percentage tolerance
-            double result = resistorValue * 0.05;
-            //resistorValue = resistorValue + (int) result;
-
-            String toleranceResultMessage = String.format(String.format("+/- 0.05" + " \n " + InterpretResult((long)result)));
-            toleranceDisplay.setText(toleranceResultMessage);
+            double result = resistorValue * toleranceValue;
         }
 
         //Check if the selected band is initialized and set the colour
@@ -331,12 +329,9 @@ public class MainActivity extends AppCompatActivity
     {
         if (currentBand == 4)
         {
+            toleranceValue = 0.10;
             //Get percentage tolerance
-            double result = resistorValue * 0.10;
-            //resistorValue = resistorValue + (int) result;
-
-            String toleranceResultMessage = String.format(String.format("+/- 0.10" + " \n " + InterpretResult((long)result)));
-            toleranceDisplay.setText(toleranceResultMessage);
+            double result = resistorValue * toleranceValue;
         }
 
         //Check if the selected band is initialized and set the colour
@@ -347,10 +342,21 @@ public class MainActivity extends AppCompatActivity
         }
     }
 
+    public void DisplayTolerance()
+    {
+        //Get percentage tolerance
+        double result = resistorValue * toleranceValue;
+        //resistorValue = resistorValue + (int) result;
+
+        String toleranceResultMessage = String.format(String.format("+/- " + String.valueOf(toleranceValue) + " \n " + InterpretResult((long)result)));
+        toleranceDisplay.setText(toleranceResultMessage);
+    }
+
     //Function button event handlers
     public void doCalculate (View view)
     {
         display.setText(InterpretResult(resistorValue));
+        DisplayTolerance();
     }
 
     public String InterpretResult(long value)
