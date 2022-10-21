@@ -240,6 +240,7 @@ public class MainActivity extends AppCompatActivity
         display.setText(String.valueOf(resistorValue));
     }
 
+    //TODO: This needs further work as it would be a better solution.
     //Changes the colour of a given band based on the colour selected
     public void ChangeBandColour(int currentBand, @ColorInt int colorId)
     {
