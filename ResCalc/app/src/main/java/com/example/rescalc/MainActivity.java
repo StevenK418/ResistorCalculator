@@ -77,7 +77,7 @@ public class MainActivity extends AppCompatActivity
         }
 
         //Check if the selected band is initialized and set the colour
-        if (selectedBand != null)
+        if (selectedBand != null && selectedBand != findViewById(R.id.buttonBand4))
         {
             //Set colour of the selected band to the selected colour
             selectedBand.setBackgroundColor(getColor(R.color.Black));
@@ -100,7 +100,7 @@ public class MainActivity extends AppCompatActivity
         }
 
         //Check if the selected band is initialized and set the colour
-        if (selectedBand != null) {
+        if (selectedBand != null && selectedBand != findViewById(R.id.buttonBand4)) {
             //Set colour of the selected band to the selected colour
             selectedBand.setBackgroundColor(getColor(R.color.Brown));
         }
@@ -122,7 +122,7 @@ public class MainActivity extends AppCompatActivity
         }
 
         //Check if the selected band is initialized and set the colour
-        if(selectedBand != null)
+        if(selectedBand != null && selectedBand != findViewById(R.id.buttonBand4))
         {
             //Set colour of the selected band to the selected colour
             selectedBand.setBackgroundColor(getColor(R.color.Red));
@@ -146,7 +146,7 @@ public class MainActivity extends AppCompatActivity
         }
 
         //Check if the selected band is initialized and set the colour
-        if(selectedBand != null)
+        if(selectedBand != null && selectedBand != findViewById(R.id.buttonBand4))
         {
             //Set colour of the selected band to the selected colour
             selectedBand.setBackgroundColor(getColor(R.color.Orange));
@@ -169,7 +169,7 @@ public class MainActivity extends AppCompatActivity
         }
 
         //Check if the selected band is initialized and set the colour
-        if(selectedBand != null)
+        if(selectedBand != null && selectedBand != findViewById(R.id.buttonBand4))
         {
             //Set colour of the selected band to the selected colour
             selectedBand.setBackgroundColor(getColor(R.color.Yellow));
@@ -192,7 +192,7 @@ public class MainActivity extends AppCompatActivity
         }
 
         //Check if the selected band is initialized and set the colour
-        if(selectedBand != null)
+        if(selectedBand != null && selectedBand != findViewById(R.id.buttonBand4))
         {
             //Set colour of the selected band to the selected colour
             selectedBand .setBackgroundColor(getColor(R.color.Green));
@@ -215,7 +215,7 @@ public class MainActivity extends AppCompatActivity
         }
 
         //Check if the selected band is initialized and set the colour
-        if(selectedBand  != null)
+        if(selectedBand  != null && selectedBand != findViewById(R.id.buttonBand4))
         {
             //Set colour of the selected band to the selected colour
             selectedBand .setBackgroundColor(getColor(R.color.Blue));
@@ -237,7 +237,7 @@ public class MainActivity extends AppCompatActivity
             resistorValue = resistorValue * 1000;
         }
         //Check if the selected band is initialized and set the colour
-        if(selectedBand  != null)
+        if(selectedBand  != null && selectedBand != findViewById(R.id.buttonBand4))
         {
             //Set colour of the selected band to the selected colour
             selectedBand .setBackgroundColor(getColor(R.color.Purple));
@@ -259,7 +259,7 @@ public class MainActivity extends AppCompatActivity
             resistorValue = resistorValue * 1000;
         }
         //Check if the selected band is initialized and set the colour
-        if(selectedBand != null)
+        if(selectedBand != null && selectedBand != findViewById(R.id.buttonBand4))
         {
             //Set colour of the selected band to the selected colour
             selectedBand.setBackgroundColor(getColor(R.color.Gray));
@@ -282,7 +282,7 @@ public class MainActivity extends AppCompatActivity
         }
 
         //Check if the selected band is initialized and set the colour
-        if(selectedBand != null)
+        if(selectedBand != null && selectedBand != findViewById(R.id.buttonBand4))
         {
             //Set colour of the selected band to the selected colour
             selectedBand.setBackgroundColor(getColor(R.color.White));
