@@ -54,6 +54,13 @@ public class MainActivity extends AppCompatActivity
         selectedBand = (Button) view;
     }
 
+    // Value Button Onclick event handlers
+    public void doBand4 (View view)
+    {
+        currentBand = 4;
+        selectedBand = (Button) view;
+    }
+
     public void doBlack (View view)
     {
         if (currentBand == 1)
