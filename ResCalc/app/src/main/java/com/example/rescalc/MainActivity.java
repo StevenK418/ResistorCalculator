@@ -296,9 +296,6 @@ public class MainActivity extends AppCompatActivity
         }
         else if (currentBand == 3)
         {
-
-            //TODO: This breaks as the value is too large and causes precision errors
-            //resulting in a minus value being calculatad
             resistorValue = resistorValue * 1000000000;
         }
 
@@ -317,7 +314,7 @@ public class MainActivity extends AppCompatActivity
             //Get percentage tolerance
             double result = resistorValue * 0.05;
             resistorValue = resistorValue + (int) result;
-            //TODO: Add a new textview and this value should be shown with a +/- before it
+
             toleranceDisplay.setText(String.format("+/- 0.05" + " \n {0}", result));
         }
 
@@ -336,7 +333,7 @@ public class MainActivity extends AppCompatActivity
             //Get percentage tolerance
             double result = resistorValue * 0.10;
             resistorValue = resistorValue + (int) result;
-            //TODO: Add a new textview and this value should be shown with a +/- before it
+
             String toleranceResultMessage = String.format(String.format("+/- 0.10" + " \n " + String.valueOf((int)result)));
             toleranceDisplay.setText(toleranceResultMessage);
         }
@@ -376,13 +373,12 @@ public class MainActivity extends AppCompatActivity
         //Iterate through the bands and reset the colour
         for( Button band : bands)
         {
-            //TODO: This should be the default colour of the buttons but
-            // there appears to be no easy way of retrieving this.
+            //Just set bands to Purple for consistency
             band.setBackgroundColor(getColor(R.color.Purple));
         }
     }
 
-    //TODO: This needs further work as it would be a better solution.
+    //TODO: This needs further work as it would be a better solution. May be beyond scope of this project.
     //Changes the colour of a given band based on the colour selected
     public void ChangeBandColour(int currentBand, @ColorInt int colorId)
     {
