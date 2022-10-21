@@ -18,16 +18,21 @@ import java.util.Hashtable;
 import java.util.List;
 import java.util.Set;
 
+import kotlin.reflect.KType;
+
 public class MainActivity extends AppCompatActivity
 {
     int currentBand = 0;
-    int resistorValue = 0;
+    long resistorValue = 0;
 
     TextView display;
     TextView toleranceDisplay;
 
     //Create a new button object to store selected band reference
     Button selectedBand = null;
+
+    //Create a new collection to store the bands in
+    List<Button> bands = new ArrayList<Button>();
 
     @Override
     protected void onCreate(Bundle savedInstanceState)
@@ -38,6 +43,17 @@ public class MainActivity extends AppCompatActivity
         //Initialize references to Text display fields
         display = findViewById(R.id.tvDisplay);
         toleranceDisplay = findViewById(R.id.toleranceDisplay);
+
+        //Populate the bands list with teh band button objects
+        //This is done here so for performance as we only want to cache
+        // this once rather than running each time in the reset method.
+        bands.add(findViewById(R.id.buttonBand1));
+        bands.add(findViewById(R.id.buttonBand2));
+        bands.add(findViewById(R.id.buttonBand3));
+        bands.add(findViewById(R.id.buttonBand4));
+
+        //Call the Reset method to ensure everything's clear and to improve consistency.
+        Reset();
     }
 
     //Band button onClick event handlers
@@ -280,6 +296,9 @@ public class MainActivity extends AppCompatActivity
         }
         else if (currentBand == 3)
         {
+
+            //TODO: This breaks as the value is too large and causes precision errors
+            //resulting in a minus value being calculatad
             resistorValue = resistorValue * 1000000000;
         }
 
@@ -318,7 +337,8 @@ public class MainActivity extends AppCompatActivity
             double result = resistorValue * 0.10;
             resistorValue = resistorValue + (int) result;
             //TODO: Add a new textview and this value should be shown with a +/- before it
-            toleranceDisplay.setText(String.format("+/- 0.10" + " \n {0}", result));
+            String toleranceResultMessage = String.format(String.format("+/- 0.10" + " \n " + String.valueOf((int)result)));
+            toleranceDisplay.setText(toleranceResultMessage);
         }
 
 
@@ -330,9 +350,36 @@ public class MainActivity extends AppCompatActivity
         }
     }
 
+    //Function button event handlers
     public void doCalculate (View view)
     {
         display.setText(String.valueOf(resistorValue));
+    }
+
+    public void doReset(View view)
+    {
+        //Reset the state of teh app for new calculations
+        Reset();
+    }
+
+
+    //Resets the state of the app prior to new calculations
+    public void Reset()
+    {
+        //Reset the Text result fields
+        toleranceDisplay.setText("");
+        display.setText("");
+
+        //Reset the stored result
+        resistorValue = 0;
+
+        //Iterate through the bands and reset the colour
+        for( Button band : bands)
+        {
+            //TODO: This should be the default colour of the buttons but
+            // there appears to be no easy way of retrieving this.
+            band.setBackgroundColor(getColor(R.color.Purple));
+        }
     }
 
     //TODO: This needs further work as it would be a better solution.
