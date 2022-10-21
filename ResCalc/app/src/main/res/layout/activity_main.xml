@@ -179,7 +179,6 @@
         android:text="Calculate"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toStartOf="@+id/guideline3"
-        app:layout_constraintHorizontal_bias="0.481"
         app:layout_constraintStart_toStartOf="@+id/guideline2"
         app:layout_constraintTop_toTopOf="@+id/guideline6"
         app:layout_constraintVertical_bias="1.0" />
@@ -192,25 +191,27 @@
         android:backgroundTintMode="add"
         android:onClick="doWhite"
         android:text="9"
-        app:layout_constraintBottom_toTopOf="@+id/buttonCalculate"
+        app:layout_constraintBottom_toBottomOf="@+id/buttonCalculate"
         app:layout_constraintEnd_toStartOf="@+id/guideline4"
         app:layout_constraintHorizontal_bias="0.516"
         app:layout_constraintStart_toStartOf="@+id/guideline2"
-        app:layout_constraintTop_toTopOf="@+id/guideline6" />
+        app:layout_constraintTop_toTopOf="@+id/guideline6"
+        app:layout_constraintVertical_bias="0.146" />
 
     <Button
         android:id="@+id/buttonToleranceSilver"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:background="#FF9800"
+        android:background="#A8A8A7"
         android:backgroundTintMode="add"
         android:onClick="doWhite"
         android:text="9"
-        app:layout_constraintBottom_toTopOf="@+id/buttonCalculate"
+        app:layout_constraintBottom_toBottomOf="@+id/buttonCalculate"
         app:layout_constraintEnd_toStartOf="@+id/guideline3"
         app:layout_constraintHorizontal_bias="0.516"
         app:layout_constraintStart_toStartOf="@+id/guideline5"
-        app:layout_constraintTop_toTopOf="@+id/guideline6" />
+        app:layout_constraintTop_toTopOf="@+id/guideline6"
+        app:layout_constraintVertical_bias="0.146" />
 
     <androidx.constraintlayout.widget.Guideline
         android:id="@+id/guideline2"
@@ -246,8 +247,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:orientation="horizontal"
-        app:layout_constraintGuide_begin="554dp"
-        app:layout_constraintGuide_percent="0.76" />
+        app:layout_constraintGuide_percent="0.73" />
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>
