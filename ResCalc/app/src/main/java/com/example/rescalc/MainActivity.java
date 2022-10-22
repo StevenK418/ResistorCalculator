@@ -366,14 +366,23 @@ public class MainActivity extends AppCompatActivity
         {
             result = String.valueOf(value) + " \u03A9";
         }
-        else if(value > 1000)
+        else if(value >= 1000)
         {
             result = String.valueOf(value/1000) + " K\u03A9";
         }
-        else if(value > 1000000)
+        else if(value >= 10000)
+        {
+            result = String.valueOf(value/10000) + " K\u03A9";
+        }
+        else if(value >= 100000)
+        {
+            result = String.valueOf(value/100000) + " K\u03A9";
+        }
+        else if(value >= 1000000)
         {
             result = String.valueOf(value/1000000) + " M\u03A9";
         }
+
         return result;
     }
 
@@ -399,13 +408,5 @@ public class MainActivity extends AppCompatActivity
             //Just set bands to Purple for consistency
             band.setBackgroundColor(getColor(R.color.Black));
         }
-    }
-
-    //TODO: This needs further work as it would be a better solution. May be beyond scope of this project.
-    //Changes the colour of a given band based on the colour selected
-    public void ChangeBandColour(int currentBand, @ColorInt int colorId)
-    {
-//        //Set colour of the selected band to the selected colour
-//        bands.get(currentBand - 1).setBackgroundColor(ContextCompat.getColor(colorId));
     }
 }
