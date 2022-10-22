@@ -398,7 +398,7 @@ public class MainActivity extends AppCompatActivity
         toleranceDisplay.setText("");
         display.setText("");
 
-        //Reset the stored result
+        //Reset the stored value
         resistorValue = 0;
 
         //Iterate through the bands and reset the colour
