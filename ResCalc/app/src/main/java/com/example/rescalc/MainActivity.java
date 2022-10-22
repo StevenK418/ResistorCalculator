@@ -146,7 +146,6 @@ public class MainActivity extends AppCompatActivity
             //Set colour of the selected band to the selected colour
             selectedBand.setBackgroundColor(getColor(R.color.Red));
         }
-
     }
 
     public void doOrange(View view)
