@@ -19,10 +19,9 @@ An Android app used to calculate resistor values via colour references.
 
 * 	Open in Android Studio.
 * 	Build and send to phone. 
-* 	In app,
-	** Tap a band of your choice the resistor. 
-	** Choose a colour for the band you want. 
-	** Continue for bands 1-3.
-	** Select band 4 and choose either gold or silver for the tolerance value. 
-	** Tap Calculate button to view the resistance and tolerance value of the resistor.
-	** Tap reset button to clear the result and the bands before calculating another value. 
+* 	Tap a band of your choice the resistor. 
+* 	Choose a colour for the band you want. 
+* 	Continue for bands 1-3.
+* 	Select band 4 and choose either gold or silver for the tolerance value. 
+* 	Tap Calculate button to view the resistance and tolerance value of the resistor.
+* 	Tap reset button to clear the result and the bands before calculating another value. 
